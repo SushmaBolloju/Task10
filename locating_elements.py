@@ -16,33 +16,16 @@ driver.maximize_window()
 time.sleep(3)
 
 # Finding follower count element
-follower_count_element = driver.find_element(By.XPATH,'//*[@id="mount_0_0_ix"]/div/div/div[2]/div/div/div[1]/div[2]/section/main/div/header/section/ul/li[2]/button/span')
-
+follower_count_element = driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div[2]/div/div/div[1]/div[2]/section/main/div/header/section/ul/li[2]/button/span/span')
 # Extracting the follower count text
-follower_count_text = follower_count_element.get_attribute('title')
-
+follower_count_text = follower_count_element.text
+print("Total number of followers:", follower_count_text)
 
 # Finding following count element using relative XPATH
-following_count_element = driver.find_element(By.XPATH,'//*[@id="mount_0_0_ix"]/div/div/div[2]/div/div/div[1]/div[2]/section/main/div/header/section/ul/li[3]/button/span/span')
+following_count_element = driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div[2]/div/div/div[1]/div[2]/section/main/div/header/section/ul/li[3]/button/span/span')
 # Extracting the following count text
 following_count_text = following_count_element.text
-
-print("Total number of followers:", follower_count_text)
 print("Total number of following:", following_count_text)
 
 # Close the browser
 driver.quit()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
